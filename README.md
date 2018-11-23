@@ -61,15 +61,11 @@ Rank 1 is also reading ‘text1.txt’ but starting at 10MB into the file, and r
 I kept the printing of this data in the production version, it helps the user to visualize the splitting when first testing.
 #############################################
 ##A remark about dependencies:
-The only dependency that needs to be installed is mpi4py.  This requires, for example, a version of Open-MPI, which can be installed on Mac using MacPorts `port install openmpi` or on Ubuntu `apt-get install openmpi-bin openmpi-doc libopenmpi-dev`.  MPI does require GNU compilers (e.g. gcc), and a test to see if MPI is running, the C hello world example here:
+The only dependency that needs to be installed is mpi4py.  This requires, for example, a version of Open-MPI, which can be installed on Mac using MacPorts `port install openmpi` or on Ubuntu `apt-get install openmpi-bin openmpi-doc libopenmpi-dev`.
 <br/>
-https://github.com/wesleykendall/mpitutorial/blob/gh-pages/tutorials/mpi-hello-world/code/mpi_hello_world.c
 <br />
 and one can compile via `mpicc mpi_hello_world.c -o mpi_hello_world` and running on, e.g 3 cores, using mpirun:  `mpirun -np 3 ./mpi_hello_world`.  If this basic test fails, the Python code will likely not run, and a manual installation of Open-MPI may need to be done.  Macs are more prone to MPI installation issues using port, straight-forward manual instructions can be found here for Mac: https://wiki.helsinki.fi/display/HUGG/Installing+Open+MPI+on+Mac+OS+X
 <br/>
-<br />
-Please contact daniel.blazevski@gmail.com for troubleshooting to get the MPI + the Python scripts running
-<br />
 <br />
  The massive scalability obtained using MPI is worth the trouble, 
 Using multiprocessing (e.g. http://pymotw.com/2/multiprocessing/mapreduce.html)
@@ -78,12 +74,3 @@ and, from what I understand, can really only be used on a single node if one is 
 
 If the Python scripts do not run, a fairly safe bet is to use the Anaconda Python distribution.  This still needs, e.g, Open-MPI.  This is what I personally had installed prior to starting this challenge for another reason, and a simple “pip install mpi4py” worked like a charm.  For additional details on installing mpi4py, please consult: http://mpi4py.scipy.org/docs/usrman/install.html
 
-To install Anaconda:
-<br />
-http://continuum.io/downloads
-
-One can always later opt to not use Anaconda, by commenting out the “export PATH” line Anaconda adds to ~/.bash_profile: 
-<br />
-> /# added by Anaconda 2.2.0 installer
-<br />
-> export PATH="/Users/danielblazevski/anaconda/bin:$PATH"
