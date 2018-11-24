@@ -73,4 +73,6 @@ created large memory issues (e.g with 2 files ~ 1GB, it breaks and > 20GB or RAM
 and, from what I understand, can really only be used on a single node if one is running on a cluster
 
 If the Python scripts do not run, a fairly safe bet is to use the Anaconda Python distribution.  This still needs, e.g, Open-MPI.  This is what I personally had installed prior to starting this challenge for another reason, and a simple “pip install mpi4py” worked like a charm.  For additional details on installing mpi4py, please consult: http://mpi4py.scipy.org/docs/usrman/install.html
+* Youtube vudeo explain:
 
+https://www.youtube.com/watch?v=muSbvEfgNT8
